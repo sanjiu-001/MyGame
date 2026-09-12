@@ -1,0 +1,23 @@
+[package]
+name = "yinhan_play"
+version = "0.1.0"
+edition = "2024"
+description = "A four-player old-maid style card game prototype"
+license = "MIT"
+
+[dependencies]
+eframe = { version = "0.33", default-features = false, features = ["default_fonts", "glow"] }
+wasm-bindgen-futures = "0.4"
+
+[lib]
+name = "yinhan_play"
+path = "src/lib.rs"
+
+[[bin]]
+name = "yinhan-play"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
